@@ -135,10 +135,10 @@
     
     <div class="coin" id="coin">
       <div class="coin-side heads">
-        <div>ОРЕЛ</div>
+        <div>ТАК</div>
       </div>
       <div class="coin-side tails">
-        <div>РЕШКА</div>
+        <div>НІ</div>
       </div>
     </div>
     
@@ -177,12 +177,12 @@
         if (isHeads) {
           coin.classList.remove('flip-tails');
           coin.classList.add('flip-heads');
-          result.textContent = '🎉 ОРЕЛ!';
+          result.textContent = '✅ ТАК!';
           headsCount++;
         } else {
           coin.classList.remove('flip-heads');
           coin.classList.add('flip-tails');
-          result.textContent = '🎯 РЕШКА!';
+          result.textContent = '❌ НІ!';
           tailsCount++;
         }
 
@@ -194,7 +194,7 @@
     function updateHistory(isHeads) {
       const historyItem = document.createElement('div');
       historyItem.className = 'history-item';
-      historyItem.textContent = `${flipCount}. ${isHeads ? 'Орел' : 'Решка'}`;
+      historyItem.textContent = `${flipCount}. ${isHeads ? 'Так' : 'Ні'}`;
       
       if (historyList.children.length >= 10) {
         historyList.removeChild(historyList.lastChild);
@@ -208,7 +208,7 @@
       statsItem.style.borderTop = '1px solid rgba(255,255,255,0.3)';
       statsItem.style.marginTop = '10px';
       statsItem.style.paddingTop = '10px';
-      statsItem.innerHTML = `<strong>Статистика:</strong><br>Орел: ${headsCount} | Решка: ${tailsCount}`;
+      statsItem.innerHTML = `<strong>Статистика:</strong><br>Так: ${headsCount} | Ні: ${tailsCount}`;
       
       // Видаляємо попередню статистику
       const existingStats = historyList.querySelector('[style*="border-top"]');
